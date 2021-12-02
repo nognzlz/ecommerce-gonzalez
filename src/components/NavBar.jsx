@@ -4,6 +4,7 @@ import { makeStyles } from '@mui/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import SideBar from './SideBar';
+import CartWidget from './CartWidget';
 
 const useStyles = makeStyles((theme) => ({
     offset: theme.mixins.toolbar,
@@ -26,7 +27,7 @@ const NavBar = ({ title }) => {
 
     return (
         <React.Fragment>
-            <AppBar className={classes.color}>
+            <AppBar>
                 <Toolbar>
                     <IconButton
                         size="large"
@@ -38,7 +39,10 @@ const NavBar = ({ title }) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6">{title}</Typography>
+                    <Typography sx={{ flexGrow: 1 }} variant="h6">
+                        {title}
+                    </Typography>
+                    <CartWidget itemsAmount={1} />
                 </Toolbar>
             </AppBar>
             <div className={classes.offset}></div>
