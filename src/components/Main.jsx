@@ -1,22 +1,24 @@
 import Container from '../UI/Container';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ItemListContainer from './ItemListContainer';
-import ItemCount from './ItemCount';
+import ItemList from './ItemList';
+import products from '../services/products';
 
 export const Main = () => {
-    const onAdd = (quantity) => {
-        alert(`Se agregaron ${quantity} productos a tu carrito`);
+    const [data, setData] = useState();
+
+    const getData = async () => {
+        setData(await products);
     };
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     return (
         <Container>
             <ItemListContainer>
-                <ItemCount
-                    stock={3}
-                    product={'Miel orgánica'}
-                    onAddFn={onAdd}
-                    initial={1}
-                />
+                <ItemList items={data} />
             </ItemListContainer>
         </Container>
     );

@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Miel orgánica",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "price": "$200",
+        "pictureUrl": "https://st2.depositphotos.com/1007422/43639/i/450/depositphotos_436393248-stock-photo-honey-glass-jar-light-background.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Salvado de avena",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "price": "$100",
+        "pictureUrl": "https://niadecovidasana.com.ar/wp-content/uploads/2021/06/Salvado-De-Avena.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Azucar mascabo",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "price": "$100",
+        "pictureUrl": "https://www.almacencamposverdes.com.ar/wp-content/uploads/2019/09/1kg-azucar-mascabo-ev.jpg"
+    }
+]
