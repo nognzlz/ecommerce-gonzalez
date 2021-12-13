@@ -9,8 +9,9 @@ import {
     Button,
 } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Item = ({ item: { title, pictureUrl, description } }) => {
+const Item = ({ item: { id, title, pictureUrl, description } }) => {
     return (
         <Box sx={{ width: 0.5, display: 'inline-block', padding: '0.5rem' }}>
             <Card variant={'outlined'}>
@@ -27,7 +28,13 @@ const Item = ({ item: { title, pictureUrl, description } }) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="medium">Ver mas</Button>
+                    <Button
+                        size="medium"
+                        component={Link}
+                        to={`/detalle/${id}`}
+                    >
+                        Ver mas
+                    </Button>
                 </CardActions>
             </Card>
         </Box>

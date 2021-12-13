@@ -4,14 +4,17 @@ import NavBar from './components/NavBar';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from './config/themeConfig';
 import Main from './components/Main';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
     return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <NavBar title="Nico Dietetica" />
-            <Main />
-        </ThemeProvider>
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <CssBaseline />
+                <NavBar title="Nico Dietetica" />
+                <Main />
+            </ThemeProvider>
+        </BrowserRouter>
     );
 }
 

@@ -25,7 +25,7 @@ const ItemCount = ({ stock, product, onAddFn, initial }) => {
     };
 
     return (
-        <Box sx={{ width: 400 }}>
+        <Box sx={{ width: '100%' }}>
             <Box
                 sx={{
                     bgcolor: 'neutral.main',

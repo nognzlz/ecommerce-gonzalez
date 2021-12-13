@@ -5,6 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import SideBar from './SideBar';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     offset: theme.mixins.toolbar,
@@ -39,7 +40,16 @@ const NavBar = ({ title }) => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography sx={{ flexGrow: 1 }} variant="h6">
+                    <Typography
+                        sx={{
+                            flexGrow: 1,
+                            textDecoration: 'none',
+                            color: '#212121',
+                        }}
+                        variant="h6"
+                        component={Link}
+                        to="/"
+                    >
                         {title}
                     </Typography>
                     <CartWidget itemsAmount={1} />
@@ -49,7 +59,11 @@ const NavBar = ({ title }) => {
             <SideBar
                 open={sideBarOpen}
                 toggleSideBar={toggleSideBar}
-                items={['Productos', 'Contactenos']}
+                items={[
+                    { name: 'Organicos', route: '/category/organicos' },
+                    { name: 'Sin TACC', route: '/category/sin-tacc' },
+                    { name: 'Proteicos', route: '/category/proteicos' },
+                ]}
             ></SideBar>
         </React.Fragment>
     );
