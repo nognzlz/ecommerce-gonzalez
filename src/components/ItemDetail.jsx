@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({ item }) => {
     const { pictureUrl, title, description, price } = item;
+    const [showItemCount, setShowItemCount] = useState(true);
+    const [carrito, setCarrito] = useState([]);
 
-    const handleAdd = () => {
-        alert(`${title} agregado al carrito`);
+    const handleAdd = (product) => {
+        setShowItemCount(false);
+        setCarrito([...carrito, product]);
     };
     return (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', marginTop: '1rem' }}>
@@ -26,12 +29,14 @@ const ItemDetail = ({ item }) => {
                 <Box sx={{ padding: '1rem' }}>
                     <Typography variant={'h3'}>{price}</Typography>
                 </Box>
-                <ItemCount
-                    product={title}
-                    stock={5}
-                    onAddFn={handleAdd}
-                    initial={1}
-                />
+                {showItemCount && (
+                    <ItemCount
+                        product={title}
+                        stock={5}
+                        onAddFn={handleAdd}
+                        initial={1}
+                    />
+                )}
                 <Box sx={{ marginTop: '1rem' }}>{description}</Box>
             </Box>
         </Box>

@@ -83,7 +83,7 @@ const ItemCount = ({ stock, product, onAddFn, initial }) => {
                 color="secondary"
                 disabled={quantity < 1 || quantity > stock}
                 onClick={() => {
-                    onAddFn(quantity);
+                    onAddFn({ ...product, quantity });
                 }}
             >
                 Agregar al carrito
