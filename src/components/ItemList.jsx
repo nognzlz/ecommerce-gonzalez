@@ -6,7 +6,7 @@ const ItemList = ({ items }) => {
     return (
         <Box sx={{ marginTop: '1rem' }}>
             {items
-                ? items.map((item) => <Item item={item}></Item>)
+                ? items.map((item) => <Item item={item} key={item.id}></Item>)
                 : 'cargando...'}
         </Box>
     );

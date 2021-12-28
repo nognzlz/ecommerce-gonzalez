@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, Details, Error, Category } from '../views';
+import { Home, Details, Error, Category, Checkout } from '../views';
 import { Routes as DOMRoutes, Route } from 'react-router-dom';
 
 export const Routes = () => {
@@ -8,6 +8,7 @@ export const Routes = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/detalle/:id" element={<Details />} />
             <Route exact path="/category/:category" element={<Category />} />
+            <Route exact path="/checkout" element={<Checkout />} />
             <Route exact path="*" element={<Error />} />
         </DOMRoutes>
     );

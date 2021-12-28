@@ -6,14 +6,18 @@ import theme from './config/themeConfig';
 import Main from './components/Main';
 import { BrowserRouter } from 'react-router-dom';
 
+import CarritoProvider from './context/CarritoProvider';
+
 function App() {
     return (
         <BrowserRouter>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <NavBar title="Nico Dietetica" />
-                <Main />
-            </ThemeProvider>
+            <CarritoProvider>
+                <ThemeProvider theme={theme}>
+                    <CssBaseline />
+                    <NavBar title="Nico Dietetica" />
+                    <Main />
+                </ThemeProvider>
+            </CarritoProvider>
         </BrowserRouter>
     );
 }

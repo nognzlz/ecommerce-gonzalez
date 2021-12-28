@@ -35,7 +35,7 @@ const ItemCount = ({ stock, product, onAddFn, initial }) => {
                 }}
             >
                 <Typography variant={'body1'} className={classes.text}>
-                    {product}
+                    {product.title}
                 </Typography>
                 <Typography variant={'body1'} className={classes.text}>
                     Stock disponible: {stock}
@@ -59,9 +59,7 @@ const ItemCount = ({ stock, product, onAddFn, initial }) => {
                         >
                             <RemoveCircle />
                         </IconButton>
-                        <Typography className={classes.text}>
-                            {quantity}
-                        </Typography>
+                        <Typography className={classes.text}>{quantity}</Typography>
                         <IconButton
                             aria-label="add"
                             size="small"

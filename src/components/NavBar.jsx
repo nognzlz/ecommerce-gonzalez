@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Toolbar, Typography, AppBar } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -7,6 +7,8 @@ import SideBar from './SideBar';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
 
+import { CarritoContext } from '../context/CarritoProvider';
+
 const useStyles = makeStyles((theme) => ({
     offset: theme.mixins.toolbar,
 }));
@@ -14,6 +16,8 @@ const useStyles = makeStyles((theme) => ({
 const NavBar = ({ title }) => {
     const classes = useStyles();
     const [sideBarOpen, setSideBarOpen] = useState(false);
+
+    const { carrito } = useContext(CarritoContext);
 
     const toggleSideBar = (open) => (event) => {
         if (
@@ -52,7 +56,7 @@ const NavBar = ({ title }) => {
                     >
                         {title}
                     </Typography>
-                    <CartWidget itemsAmount={1} />
+                    <CartWidget itemsAmount={carrito.length} />
                 </Toolbar>
             </AppBar>
             <div className={classes.offset}></div>
