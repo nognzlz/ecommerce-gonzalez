@@ -8,7 +8,7 @@ export const Routes = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/detalle/:id" element={<Details />} />
             <Route exact path="/category/:category" element={<Category />} />
-            <Route exact path="/checkout" element={<Checkout />} />
+            <Route exact path="/cart" element={<Checkout />} />
             <Route exact path="*" element={<Error />} />
         </DOMRoutes>
     );

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@mui/styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { CarritoContext } from '../context/CarritoProvider';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,18 +24,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const CartWidget = ({ itemsAmount }) => {
+const CartWidget = () => {
+    const { carrito } = useContext(CarritoContext);
     const classes = useStyles();
     return (
         <Paper elevation={3} className={classes.root}>
             <Box>
                 <ShoppingCartIcon className={classes.icon} />
-                <Typography
-                    variant="body1"
-                    gutterBottom
-                    className={classes.cartAmount}
-                >
-                    {itemsAmount}
+                <Typography variant="body1" gutterBottom className={classes.cartAmount}>
+                    {carrito.reduce((a, b) => {
+                        return a + b.quantity;
+                    }, 0)}
                 </Typography>
             </Box>
         </Paper>

@@ -10,8 +10,8 @@ export const Precheckout = () => {
                 <Button component={Link} to={'/'}>
                     Seguir comprando
                 </Button>
-                <Button component={Link} to={'/checkout'}>
-                    Ir al checkout
+                <Button component={Link} to={'/cart'}>
+                    Terminar mi compra
                 </Button>
             </Box>
         </Paper>

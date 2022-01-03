@@ -20,10 +20,7 @@ const NavBar = ({ title }) => {
     const { carrito } = useContext(CarritoContext);
 
     const toggleSideBar = (open) => (event) => {
-        if (
-            event.type === 'keydown' &&
-            (event.key === 'Tab' || event.key === 'Shift')
-        ) {
+        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
 
@@ -56,7 +53,7 @@ const NavBar = ({ title }) => {
                     >
                         {title}
                     </Typography>
-                    <CartWidget itemsAmount={carrito.length} />
+                    {!!carrito.length && <CartWidget />}
                 </Toolbar>
             </AppBar>
             <div className={classes.offset}></div>
