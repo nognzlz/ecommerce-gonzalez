@@ -16,23 +16,14 @@ const Item = ({ item: { id, title, pictureUrl, description } }) => {
         <Box sx={{ width: 0.5, display: 'inline-block', padding: '0.5rem' }}>
             <Card variant={'outlined'}>
                 <CardHeader title={title} />
-                <CardMedia
-                    component="img"
-                    height="194"
-                    image={pictureUrl}
-                    alt={title}
-                />
+                <CardMedia component="img" height="194" image={pictureUrl} alt={title} />
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
                         {description}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button
-                        size="medium"
-                        component={Link}
-                        to={`/detalle/${id}`}
-                    >
+                    <Button size="medium" component={Link} to={`/detalle/${id}`}>
                         Ver mas
                     </Button>
                 </CardActions>

@@ -9,13 +9,13 @@ export const Cart = () => {
     return (
         <Box>
             {!!carrito.length ? (
-                <Box sx={{ padding: '1rem' }}>
-                    <Typography variant="h5">Los items de tu carrito son:</Typography>
+                <Box sx={{ padding: '1rem 0' }}>
+                    <Typography variant="h3">Los items de tu carrito son:</Typography>
                     <CartList />
                 </Box>
             ) : (
-                <Box sx={{ padding: '1rem' }}>
-                    <Typography variant="h5">No hay productos en tu compra</Typography>
+                <Box sx={{ padding: '1rem 0' }}>
+                    <Typography variant="h3">No hay productos en tu compra</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                         <Button component={Link} to="/">
                             Ir al inicio

@@ -8,7 +8,7 @@ export const CartItem = ({ id, title, quantity }) => {
     const { deleteItem } = useContext(CarritoContext);
     return (
         <ListItem
-            sx={{ bgcolor: 'neutral.main', boxShadow: 1, margin: '1rem' }}
+            sx={{ boxShadow: 1, margin: '1rem', padding: '1rem' }}
             secondaryAction={
                 <IconButton edge="end" aria-label="delete" onClick={() => deleteItem(id)}>
                     <DeleteIcon />

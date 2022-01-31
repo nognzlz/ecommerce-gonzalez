@@ -14,6 +14,9 @@ const theme = createTheme({
         neutral: {
             main: '#E8E8CC',
         },
+        error: {
+            main: '#ff0033',
+        },
     },
 });
 

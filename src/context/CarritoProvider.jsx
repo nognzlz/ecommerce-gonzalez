@@ -7,8 +7,10 @@ const CarritoProvider = ({ children }) => {
 
     const deleteItem = (id) => setCarrito(carrito.filter((item) => item.id !== id));
 
+    const clearCart = () => setCarrito([]);
+
     return (
-        <CarritoContext.Provider value={{ carrito, setCarrito, deleteItem }}>
+        <CarritoContext.Provider value={{ carrito, setCarrito, deleteItem, clearCart }}>
             {children}
         </CarritoContext.Provider>
     );
