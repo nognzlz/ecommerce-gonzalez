@@ -89,6 +89,9 @@ export const CheckoutForm = ({ setShowCart }) => {
                         <InputLabel htmlFor="email">Correo electrónico</InputLabel>
                         <Input id="email" name="email" onChange={handleChange} />
                     </FormControl>
+                    <Typography sx={{ margin: '1rem' }} variant="body1">
+                        Total: ${form.total}
+                    </Typography>
                     <Button
                         endIcon={<SendIcon />}
                         variant="contained"
