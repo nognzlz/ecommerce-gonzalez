@@ -26,13 +26,13 @@ export const CheckoutForm = ({ setShowCart }) => {
     });
 
     useEffect(() => {
-        setForm({
+        setForm((form) => ({
             ...form,
             total: carrito.reduce((a, b) => {
                 return a + Number(b.price.split('$')[1]) * b.quantity;
             }, 0),
             items: carrito,
-        });
+        }));
     }, [carrito]);
 
     const handleSubmit = async (e) => {
