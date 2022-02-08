@@ -23,14 +23,14 @@ const ItemDetail = ({ item }) => {
             <Box sx={{ width: 1, marginBottom: '1rem' }}>
                 <Typography variant={'h2'}>{title}</Typography>
             </Box>
-            <Box sx={{ width: 0.5, userSelect: 'none' }}>
+            <Box sx={{ width: { xs: 1, md: 0.5 }, userSelect: 'none' }}>
                 <img src={pictureUrl} alt={title} style={{ width: '100%' }} />
             </Box>
             <Box
                 sx={{
                     justifyContent: 'center',
-                    paddingLeft: '0.5rem',
-                    width: 0.5,
+                    paddingLeft: { md: '0.5rem' },
+                    width: { xs: 1, md: 0.5 },
                 }}
             >
                 <Box sx={{ padding: '1rem' }}>

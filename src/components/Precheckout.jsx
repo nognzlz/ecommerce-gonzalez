@@ -8,11 +8,16 @@ export const Precheckout = () => {
             <Typography mb={2} sx={{ color: '#FFFFFF' }}>
                 Producto Agregado al carrito!
             </Typography>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: { md: 'flex' }, justifyContent: { md: 'space-between' } }}>
                 <Button variant="outlined" component={Link} to={'/'}>
                     Seguir comprando
                 </Button>
-                <Button variant="outlined" component={Link} to={'/cart'}>
+                <Button
+                    variant="outlined"
+                    component={Link}
+                    sx={{ marginTop: { xs: 1 } }}
+                    to={'/cart'}
+                >
                     Terminar mi compra
                 </Button>
             </Box>

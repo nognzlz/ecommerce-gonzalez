@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 const Item = ({ item: { id, title, pictureUrl, description } }) => {
     return (
-        <Box sx={{ width: 0.5, display: 'inline-block', padding: '0.5rem' }}>
+        <Box sx={{ width: { md: 0.5, xs: 1 }, display: 'inline-block', padding: '0.5rem' }}>
             <Card variant={'outlined'}>
                 <CardHeader title={title} />
                 <CardMedia component="img" height="194" image={pictureUrl} alt={title} />

@@ -59,11 +59,11 @@ export const CheckoutForm = ({ setShowCart }) => {
 
     return carrito.length > 0 || success || error ? (
         loading ? (
-            <Paper sx={{ margin: '1rem', padding: '1rem', width: '100%' }}>
+            <Paper sx={{ margin: '1rem 0', padding: '1rem', width: 1 }}>
                 <Typography variant="h5"> Procesando tu orden ...</Typography>
             </Paper>
         ) : success ? (
-            <Paper sx={{ margin: '1rem', padding: '1rem', width: '100%', bgcolor: 'success.main' }}>
+            <Paper sx={{ margin: '1rem 0', padding: '1rem', width: 1, bgcolor: 'success.main' }}>
                 <Typography mb={2} variant="h5" color={grey[50]}>
                     Tu orden fue cargada exitosamente!
                 </Typography>
@@ -75,7 +75,7 @@ export const CheckoutForm = ({ setShowCart }) => {
                 </Button>
             </Paper>
         ) : error ? (
-            <Paper sx={{ margin: '1rem', padding: '1rem', width: '100%', bgcolor: 'error.main' }}>
+            <Paper sx={{ margin: '1rem 0', padding: '1rem', width: 1, bgcolor: 'error.main' }}>
                 <Typography variant="h5"> Lo sentimos, no pudimos procesar tu orden</Typography>
                 <Button component={Link} to="/">
                     Ir al inicio
