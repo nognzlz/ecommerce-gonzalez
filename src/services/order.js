@@ -4,8 +4,7 @@ import firestore from './firestore';
 export const sendOrder = async (order) => {
     try {
         const ordernesCol = collection(firestore, 'ordenes');
-        await addDoc(ordernesCol, order);
-        return true;
+        return await addDoc(ordernesCol, order);
     } catch (error) {
         return false;
     }

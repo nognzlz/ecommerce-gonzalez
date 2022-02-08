@@ -33,9 +33,7 @@ const CartWidget = () => {
             <Box>
                 <ShoppingCartIcon className={classes.icon} />
                 <Typography variant="body1" gutterBottom className={classes.cartAmount}>
-                    {carrito.reduce((a, b) => {
-                        return a + b.quantity;
-                    }, 0)}
+                    {carrito.length}
                 </Typography>
             </Box>
         </Paper>

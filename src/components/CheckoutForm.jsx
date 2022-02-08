@@ -3,6 +3,7 @@ import SendIcon from '@mui/icons-material/Send';
 import { CarritoContext } from '../context/CarritoProvider';
 import { sendOrder } from '../services/order';
 import { Link } from 'react-router-dom';
+import { grey } from '@mui/material/colors';
 
 import React, { useState, useContext, useEffect } from 'react';
 
@@ -12,6 +13,7 @@ export const CheckoutForm = ({ setShowCart }) => {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
+    const [orderId, setOrderId] = useState();
 
     const [form, setForm] = useState({
         buyer: {
@@ -40,6 +42,7 @@ export const CheckoutForm = ({ setShowCart }) => {
         setLoading(true);
         const result = await sendOrder(form);
         if (result) {
+            setOrderId(result.id);
             setSuccess(true);
         } else {
             setError(true);
@@ -61,8 +64,13 @@ export const CheckoutForm = ({ setShowCart }) => {
             </Paper>
         ) : success ? (
             <Paper sx={{ margin: '1rem', padding: '1rem', width: '100%', bgcolor: 'success.main' }}>
-                <Typography variant="h5"> Tu orden fue cargada exitosamente!</Typography>
-                <Button component={Link} to="/">
+                <Typography mb={2} variant="h5" color={grey[50]}>
+                    Tu orden fue cargada exitosamente!
+                </Typography>
+                <Typography mb={2} variant="body1" color={grey[50]}>
+                    Tu código de compra es: {orderId}
+                </Typography>
+                <Button variant="outlined" component={Link} to="/">
                     Ir al inicio
                 </Button>
             </Paper>
@@ -74,30 +82,25 @@ export const CheckoutForm = ({ setShowCart }) => {
                 </Button>
             </Paper>
         ) : (
-            <Box component="form" onSubmit={handleSubmit}>
+            <Box mt={3} component="form" onSubmit={handleSubmit}>
                 <Typography variant="h3">Datos del recipiente</Typography>
-                <Paper sx={{ margin: '1rem', padding: '1rem', width: '100%' }}>
-                    <FormControl fullWidth sx={{ margin: '1rem' }}>
+                <Paper sx={{ my: 3, padding: '1rem' }}>
+                    <FormControl fullWidth sx={{ my: 2 }}>
                         <InputLabel htmlFor="name">Nombre Completo</InputLabel>
                         <Input id="name" name="name" onChange={handleChange} />
                     </FormControl>
-                    <FormControl fullWidth sx={{ margin: '1rem' }}>
+                    <FormControl fullWidth sx={{ my: 2 }}>
                         <InputLabel htmlFor="phone">Telefono</InputLabel>
                         <Input id="phone" name="phone" onChange={handleChange} />
                     </FormControl>
-                    <FormControl fullWidth sx={{ margin: '1rem' }}>
+                    <FormControl fullWidth sx={{ my: 2 }}>
                         <InputLabel htmlFor="email">Correo electrónico</InputLabel>
                         <Input id="email" name="email" onChange={handleChange} />
                     </FormControl>
-                    <Typography sx={{ margin: '1rem' }} variant="body1">
+                    <Typography sx={{ my: 2 }} variant="body1">
                         Total: ${form.total}
                     </Typography>
-                    <Button
-                        endIcon={<SendIcon />}
-                        variant="contained"
-                        sx={{ margin: '1rem' }}
-                        type="submit"
-                    >
+                    <Button endIcon={<SendIcon />} variant="contained" sx={{ mb: 3 }} type="submit">
                         Terminar la compra
                     </Button>
                 </Paper>

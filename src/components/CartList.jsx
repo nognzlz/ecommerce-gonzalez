@@ -7,8 +7,14 @@ export const CartList = () => {
     const { carrito } = useContext(CarritoContext);
     return (
         <Box>
-            {carrito.map(({ id, title, quantity }) => (
-                <CartItem id={id} title={title} key={id} quantity={quantity} />
+            {carrito.map(({ id, title, quantity, price }) => (
+                <CartItem
+                    id={id}
+                    title={title}
+                    key={id}
+                    quantity={quantity}
+                    totalPrice={price.split('$')[1] * quantity}
+                />
             ))}
         </Box>
     );

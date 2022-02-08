@@ -23,7 +23,12 @@ const Item = ({ item: { id, title, pictureUrl, description } }) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="medium" component={Link} to={`/detalle/${id}`}>
+                    <Button
+                        variant="contained"
+                        size="medium"
+                        component={Link}
+                        to={`/detalle/${id}`}
+                    >
                         Ver mas
                     </Button>
                 </CardActions>

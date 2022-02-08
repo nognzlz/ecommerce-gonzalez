@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 export const Precheckout = () => {
     return (
         <Paper variant="outlined" sx={{ padding: '1rem', bgcolor: 'success.main' }}>
-            <Typography sx={{ color: '#FFFFFF' }}>Producto Agregado al carrito!</Typography>
+            <Typography mb={2} sx={{ color: '#FFFFFF' }}>
+                Producto Agregado al carrito!
+            </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Button component={Link} to={'/'}>
+                <Button variant="outlined" component={Link} to={'/'}>
                     Seguir comprando
                 </Button>
-                <Button component={Link} to={'/cart'}>
+                <Button variant="outlined" component={Link} to={'/cart'}>
                     Terminar mi compra
                 </Button>
             </Box>
