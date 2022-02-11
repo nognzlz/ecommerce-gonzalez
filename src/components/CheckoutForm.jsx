@@ -87,15 +87,27 @@ export const CheckoutForm = ({ setShowCart }) => {
                 <Paper sx={{ my: 3, padding: '1rem' }}>
                     <FormControl fullWidth sx={{ my: 2 }}>
                         <InputLabel htmlFor="name">Nombre Completo</InputLabel>
-                        <Input id="name" name="name" onChange={handleChange} />
+                        <Input id="name" name="name" onChange={handleChange} required />
                     </FormControl>
                     <FormControl fullWidth sx={{ my: 2 }}>
                         <InputLabel htmlFor="phone">Telefono</InputLabel>
-                        <Input id="phone" name="phone" onChange={handleChange} />
+                        <Input
+                            id="phone"
+                            name="phone"
+                            type="phone"
+                            onChange={handleChange}
+                            required
+                        />
                     </FormControl>
                     <FormControl fullWidth sx={{ my: 2 }}>
                         <InputLabel htmlFor="email">Correo electrónico</InputLabel>
-                        <Input id="email" name="email" onChange={handleChange} />
+                        <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            onChange={handleChange}
+                            required
+                        />
                     </FormControl>
                     <Typography sx={{ my: 2 }} variant="body1">
                         Total: ${form.total}
